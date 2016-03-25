@@ -6,7 +6,6 @@ if mag.readRegister(0)~=hex2dec('48')
 end
 
 %% get factory cal
-
 mag.writeRegister(def.AK8963_CNTL,0); % power down mag
 pause(0.01);
 mag.writeRegister(def.AK8963_CNTL,hex2dec('0f')); % enter fuse mode
