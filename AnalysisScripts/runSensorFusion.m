@@ -8,7 +8,7 @@ imu=initIMU(mypi);
 
 b=readMagData(mag,magCal);
 q=[ 0.9535    0.0000    0.0009    0.3012];
-samples=1000;
+samples=100;
 qs=zeros(samples,4);
 r=rotation;
 yprs=zeros(samples,3);

@@ -1,10 +1,10 @@
 function imu=initIMU(mypi,imu)
 def=getIMUDefines;
 if ~exist('imu','var') || isempty(imu)
-    if mypi.I2CBusSpeed~=400000
-        disableI2C(mypi);
-        enableI2C(mypi,400000);
-    end
+%     if mypi.I2CBusSpeed~=400000
+%         disableI2C(mypi);
+%         enableI2C(mypi,400000);
+%     end
     
     
     imu=i2cdev(mypi,'i2c-1',def.MPU9250_ADDRESS);
