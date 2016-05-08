@@ -7,9 +7,9 @@
  *
  * Code generation for model "udpRead".
  *
- * Model version              : 1.88
+ * Model version              : 1.90
  * Simulink Coder version : 8.9 (R2015b) 13-Aug-2015
- * C source code generated on : Sun May 01 16:54:21 2016
+ * C source code generated on : Sun May 08 12:33:34 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -57,7 +57,7 @@ static const char_T * rtDataTypeNames[] = {
 
 /* data type transitions for block I/O structure */
 static DataTypeTransition rtBTransitions[] = {
-  { (char_T *)(&udpRead_B.UDPReceive_o1[0]), 1, 0, 41 },
+  { (char_T *)(&udpRead_B.UDPReceive_o1[0]), 1, 0, 42 },
 
   { (char_T *)(&udpRead_B.UDPReceive_o2), 5, 0, 1 },
 
@@ -66,7 +66,7 @@ static DataTypeTransition rtBTransitions[] = {
 
   { (char_T *)(&udpRead_DW.UDPReceive_NetworkLib[0]), 0, 0, 137 },
 
-  { (char_T *)(&udpRead_DW.Scope_PWORK.LoggedData[0]), 11, 0, 12 },
+  { (char_T *)(&udpRead_DW.Scope_PWORK.LoggedData[0]), 11, 0, 13 },
 
   { (char_T *)(&udpRead_DW.FixPtUnitDelay1_DSTATE), 1, 0, 1 },
 

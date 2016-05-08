@@ -141,47 +141,47 @@
 	
 	  ;% udpRead_B.Init
 	  section.data(2).logicalSrcIdx = 1;
-	  section.data(2).dtTransOffset = 30;
+	  section.data(2).dtTransOffset = 31;
 	
 	  ;% udpRead_B.Xnew
 	  section.data(3).logicalSrcIdx = 2;
-	  section.data(3).dtTransOffset = 31;
+	  section.data(3).dtTransOffset = 32;
 	
 	  ;% udpRead_B.Selector
 	  section.data(4).logicalSrcIdx = 3;
-	  section.data(4).dtTransOffset = 32;
+	  section.data(4).dtTransOffset = 33;
 	
 	  ;% udpRead_B.Selector1
 	  section.data(5).logicalSrcIdx = 4;
-	  section.data(5).dtTransOffset = 33;
+	  section.data(5).dtTransOffset = 34;
 	
 	  ;% udpRead_B.Selector2
 	  section.data(6).logicalSrcIdx = 5;
-	  section.data(6).dtTransOffset = 34;
+	  section.data(6).dtTransOffset = 35;
 	
 	  ;% udpRead_B.Selector_d
 	  section.data(7).logicalSrcIdx = 6;
-	  section.data(7).dtTransOffset = 35;
+	  section.data(7).dtTransOffset = 36;
 	
 	  ;% udpRead_B.Selector1_f
 	  section.data(8).logicalSrcIdx = 7;
-	  section.data(8).dtTransOffset = 36;
+	  section.data(8).dtTransOffset = 37;
 	
 	  ;% udpRead_B.Selector2_f
 	  section.data(9).logicalSrcIdx = 8;
-	  section.data(9).dtTransOffset = 37;
+	  section.data(9).dtTransOffset = 38;
 	
 	  ;% udpRead_B.Selector3
 	  section.data(10).logicalSrcIdx = 9;
-	  section.data(10).dtTransOffset = 38;
+	  section.data(10).dtTransOffset = 39;
 	
 	  ;% udpRead_B.Selector4
 	  section.data(11).logicalSrcIdx = 10;
-	  section.data(11).dtTransOffset = 39;
+	  section.data(11).dtTransOffset = 40;
 	
 	  ;% udpRead_B.Selector5
 	  section.data(12).logicalSrcIdx = 11;
-	  section.data(12).dtTransOffset = 40;
+	  section.data(12).dtTransOffset = 41;
 	
       nTotData = nTotData + section.nData;
       sigMap.sections(1) = section;
@@ -270,19 +270,19 @@
 	
 	  ;% udpRead_DW.Scope_PWORK_c.LoggedData
 	  section.data(2).logicalSrcIdx = 2;
-	  section.data(2).dtTransOffset = 2;
+	  section.data(2).dtTransOffset = 3;
 	
 	  ;% udpRead_DW.Scope_PWORK_i.LoggedData
 	  section.data(3).logicalSrcIdx = 3;
-	  section.data(3).dtTransOffset = 5;
+	  section.data(3).dtTransOffset = 6;
 	
 	  ;% udpRead_DW.Scope1_PWORK.LoggedData
 	  section.data(4).logicalSrcIdx = 4;
-	  section.data(4).dtTransOffset = 8;
+	  section.data(4).dtTransOffset = 9;
 	
 	  ;% udpRead_DW.Scope2_PWORK.LoggedData
 	  section.data(5).logicalSrcIdx = 5;
-	  section.data(5).dtTransOffset = 9;
+	  section.data(5).dtTransOffset = 10;
 	
       nTotData = nTotData + section.nData;
       dworkMap.sections(2) = section;
@@ -366,8 +366,8 @@
   ;%
 
 
-  targMap.checksum0 = 1556687154;
-  targMap.checksum1 = 1743337526;
-  targMap.checksum2 = 3012980648;
-  targMap.checksum3 = 1570491107;
+  targMap.checksum0 = 597430241;
+  targMap.checksum1 = 1019470990;
+  targMap.checksum2 = 4143940322;
+  targMap.checksum3 = 93090447;
 

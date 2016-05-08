@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'udpRead'.
  *
- * Model version                  : 1.88
+ * Model version                  : 1.90
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
  * TLC version                    : 8.9 (Jul 31 2015)
- * C/C++ source code generated on : Sun May 01 16:54:21 2016
+ * C/C++ source code generated on : Sun May 08 12:33:34 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -54,7 +54,7 @@ void udpRead_output(void)
 
   /* S-Function (sdspFromNetwork): '<Root>/UDP Receive' */
   sErr = GetErrorBuffer(&udpRead_DW.UDPReceive_NetworkLib[0U]);
-  samplesRead = 30;
+  samplesRead = 31;
   LibOutputs_Network(&udpRead_DW.UDPReceive_NetworkLib[0U],
                      &udpRead_B.UDPReceive_o1[0U], &samplesRead);
   if (*sErr != 0) {
@@ -236,10 +236,10 @@ void udpRead_initialize(void)
   udpRead_M->Timing.stepSize0 = 0.001;
 
   /* External mode info */
-  udpRead_M->Sizes.checksums[0] = (1556687154U);
-  udpRead_M->Sizes.checksums[1] = (1743337526U);
-  udpRead_M->Sizes.checksums[2] = (3012980648U);
-  udpRead_M->Sizes.checksums[3] = (1570491107U);
+  udpRead_M->Sizes.checksums[0] = (597430241U);
+  udpRead_M->Sizes.checksums[1] = (1019470990U);
+  udpRead_M->Sizes.checksums[2] = (4143940322U);
+  udpRead_M->Sizes.checksums[3] = (93090447U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;

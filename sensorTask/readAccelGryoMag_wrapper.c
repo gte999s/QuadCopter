@@ -238,30 +238,30 @@ unsigned int dl;
 signed short temp;
 float count;
 int index;
+int magCounter=0;
 int DataSamples;
 
 if(xD[0] == 1)
 {
     #ifndef MATLAB_MEX_FILE
     
-    // read Mag    
-
-    if (wiringPiI2CReadReg8(magI2C,AK8963_ST1)>0)
-    { 
-        temp  =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_XOUT_L);
-        MagX[0]=(float)(temp*magCalDataX*Mres);
-        temp   =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_YOUT_L);
-        MagY[0]=(float)(temp*magCalDataY*Mres);
-        temp   =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_ZOUT_L);
-        MagZ[0]=(float)(temp*magCalDataZ*Mres);
-        temp   =wiringPiI2CReadReg8(magI2C,AK8963_ST2); // read error status
-    }
-    else 
-    {
-     MagX[0]=MagX[1];
-     MagY[0]=MagY[1];
-     MagZ[0]=MagZ[1];     
-    }
+//     // read Mag        
+//     if (wiringPiI2CReadReg8(magI2C,AK8963_ST1)>0)
+//     { 
+//         temp  =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_XOUT_L);
+//         MagX[0]=(float)(temp*magCalDataX*Mres);
+//         temp   =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_YOUT_L);
+//         MagY[0]=(float)(temp*magCalDataY*Mres);
+//         temp   =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_ZOUT_L);
+//         MagZ[0]=(float)(temp*magCalDataZ*Mres);
+//         temp   =wiringPiI2CReadReg8(magI2C,AK8963_ST2); // read error status
+//     }
+//     else 
+//     {
+//      MagX[0]=MagX[1];
+//      MagY[0]=MagY[1];
+//      MagZ[0]=MagZ[1];     
+//     }
     
     //wait for FIFO count to be greater than/equal to 4   
     DataSamples=0;    
@@ -312,6 +312,30 @@ if(xD[0] == 1)
              dl= sU.byte[1];
              temp =((dh<<8)|dl);
              GyroZ[index] = ((float)temp) * (250.0/32768.0); // GFS_250DPS
+             
+             
+             
+             // read Mag
+             if (index==0)
+             {
+                 if (wiringPiI2CReadReg8(magI2C,AK8963_ST1)>0)
+                 {
+                     temp  =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_XOUT_L);
+                     MagX[0]=(float)(temp*magCalDataX*Mres);
+                     temp   =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_YOUT_L);
+                     MagY[0]=(float)(temp*magCalDataY*Mres);
+                     temp   =(signed short)wiringPiI2CReadReg16(magI2C,AK8963_ZOUT_L);
+                     MagZ[0]=(float)(temp*magCalDataZ*Mres);
+                     temp   =wiringPiI2CReadReg8(magI2C,AK8963_ST2); // read error status
+                 }
+                 else
+                 {
+                     MagX[0]=MagX[1];
+                     MagY[0]=MagY[1];
+                     MagZ[0]=MagZ[1];
+                 }
+             }
+
              
              index++;
         }

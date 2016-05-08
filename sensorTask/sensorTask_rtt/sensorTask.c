@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'sensorTask'.
  *
- * Model version                  : 1.104
+ * Model version                  : 1.109
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
  * TLC version                    : 8.9 (Jul 31 2015)
- * C/C++ source code generated on : Sun May 01 16:43:32 2016
+ * C/C++ source code generated on : Sun May 08 12:38:17 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -112,6 +112,8 @@ void sensorTask_output(void)
     sensorTask_B.readAccelGyroMagSfun_o8[1];
   sensorTask_B.TmpSignalConversionAtUDPSendInp[29] =
     sensorTask_B.readAccelGyroMagSfun_o9[1];
+  sensorTask_B.TmpSignalConversionAtUDPSendInp[30] =
+    sensorTask_B.readAccelGyroMagSfun_o10;
 }
 
 /* Model update function */
@@ -139,7 +141,7 @@ void sensorTask_update(void)
   /* Update for S-Function (sdspToNetwork): '<Root>/UDP Send' */
   sErr = GetErrorBuffer(&sensorTask_DW.UDPSend_NetworkLib[0U]);
   LibUpdate_Network(&sensorTask_DW.UDPSend_NetworkLib[0U],
-                    &sensorTask_B.TmpSignalConversionAtUDPSendInp[0U], 30);
+                    &sensorTask_B.TmpSignalConversionAtUDPSendInp[0U], 31);
   if (*sErr != 0) {
     rtmSetErrorStatus(sensorTask_M, sErr);
     rtmSetStopRequested(sensorTask_M, 1);
