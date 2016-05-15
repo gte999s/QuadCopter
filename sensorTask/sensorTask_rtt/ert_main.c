@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'sensorTask'.
  *
- * Model version                  : 1.109
+ * Model version                  : 1.119
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
  * TLC version                    : 8.9 (Jul 31 2015)
- * C/C++ source code generated on : Sun May 08 12:38:17 2016
+ * C/C++ source code generated on : Sun May 15 17:21:31 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex

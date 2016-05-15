@@ -25,7 +25,7 @@
   *  -------------------------------------------------------------------------
   * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
   *  ------------------------------------------------------------------------- 
-* Created: Sun May  8 12:38:01 2016
+* Created: Sun May 15 14:15:50 2016
 */
 #define S_FUNCTION_LEVEL 2
 #define S_FUNCTION_NAME readAccelGryoMag

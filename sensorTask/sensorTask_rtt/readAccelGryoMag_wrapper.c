@@ -313,7 +313,10 @@ if(xD[0] == 1)
              temp =((dh<<8)|dl);
              GyroZ[index] = ((float)temp) * (250.0/32768.0); // GFS_250DPS
              
-             
+             // convert to rad/sec
+             GyroX[index]*=0.0174533;
+             GyroY[index]*=0.0174533;
+             GyroZ[index]*=0.0174533;                          
              
              // read Mag
              if (index==0)
