@@ -7,5 +7,8 @@ Motor 4 - BCM 23
 PWM freq = 200Hz
 PWM range = 2500
 
+SCL = blue
+SDA = yellow
+
 white clockwise
 red counter clockwise
