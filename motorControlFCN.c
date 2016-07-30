@@ -25,7 +25,7 @@
   *  -------------------------------------------------------------------------
   * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
   *  ------------------------------------------------------------------------- 
-* Created: Mon May 30 14:51:20 2016
+* Created: Sun Jul 24 13:43:21 2016
 */
 #define S_FUNCTION_LEVEL 2
 #define S_FUNCTION_NAME motorControlFCN
@@ -34,9 +34,9 @@
 #define NUM_INPUTS          1
 /* Input Port  0 */
 #define IN_PORT_0_NAME      motorSpeed
-#define INPUT_0_WIDTH       1
+#define INPUT_0_WIDTH       4
 #define INPUT_DIMS_0_COL    1
-#define INPUT_0_DTYPE       uint32_T
+#define INPUT_0_DTYPE       real32_T
 #define INPUT_0_COMPLEX     COMPLEX_NO
 #define IN_0_FRAME_BASED    FRAME_NO
 #define IN_0_BUS_BASED      0
@@ -72,9 +72,9 @@
 /*<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 #include "simstruc.h"
 
-extern void motorControlFCN_Outputs_wrapper(const uint32_T *motorSpeed,
+extern void motorControlFCN_Outputs_wrapper(const real32_T *motorSpeed,
 			const real_T *xD);
-extern void motorControlFCN_Update_wrapper(const uint32_T *motorSpeed,
+extern void motorControlFCN_Update_wrapper(const real32_T *motorSpeed,
 			real_T *xD);
 
 /*====================*
@@ -99,7 +99,7 @@ static void mdlInitializeSizes(SimStruct *S)
 
     if (!ssSetNumInputPorts(S, NUM_INPUTS)) return;
     ssSetInputPortWidth(S, 0, INPUT_0_WIDTH);
-    ssSetInputPortDataType(S, 0, SS_UINT32);
+    ssSetInputPortDataType(S, 0, SS_SINGLE);
     ssSetInputPortComplexSignal(S, 0, INPUT_0_COMPLEX);
     ssSetInputPortDirectFeedThrough(S, 0, INPUT_0_FEEDTHROUGH);
     ssSetInputPortRequiredContiguous(S, 0, 1); /*direct input signal access*/
@@ -121,6 +121,25 @@ static void mdlInitializeSizes(SimStruct *S)
 		     SS_OPTION_WORKS_WITH_CODE_REUSE));
 }
 
+#if defined(MATLAB_MEX_FILE)
+#define MDL_SET_INPUT_PORT_DIMENSION_INFO
+static void mdlSetInputPortDimensionInfo(SimStruct        *S, 
+                                         int_T            port,
+                                         const DimsInfo_T *dimsInfo)
+{
+    if(!ssSetInputPortDimensionInfo(S, port, dimsInfo)) return;
+}
+#endif
+
+#define MDL_SET_OUTPUT_PORT_DIMENSION_INFO
+#if defined(MDL_SET_OUTPUT_PORT_DIMENSION_INFO)
+static void mdlSetOutputPortDimensionInfo(SimStruct        *S, 
+                                          int_T            port, 
+                                          const DimsInfo_T *dimsInfo)
+{
+ if (!ssSetOutputPortDimensionInfo(S, port, dimsInfo)) return;
+}
+#endif
 # define MDL_SET_INPUT_PORT_FRAME_DATA
 static void mdlSetInputPortFrameData(SimStruct  *S, 
                                      int_T      port,
@@ -173,7 +192,7 @@ static void mdlSetDefaultPortDataTypes(SimStruct *S)
 */
 static void mdlOutputs(SimStruct *S, int_T tid)
 {
-    const uint32_T   *motorSpeed  = (const uint32_T*) ssGetInputPortSignal(S,0);
+    const real32_T   *motorSpeed  = (const real32_T*) ssGetInputPortSignal(S,0);
     const real_T   *xD = ssGetDiscStates(S);
 
     motorControlFCN_Outputs_wrapper(motorSpeed, xD);
@@ -190,7 +209,7 @@ static void mdlOutputs(SimStruct *S, int_T tid)
   static void mdlUpdate(SimStruct *S, int_T tid)
   {
     real_T         *xD  = ssGetDiscStates(S);
-    const uint32_T   *motorSpeed  = (const uint32_T*) ssGetInputPortSignal(S,0);
+    const real32_T   *motorSpeed  = (const real32_T*) ssGetInputPortSignal(S,0);
 
     motorControlFCN_Update_wrapper(motorSpeed,  xD);
 }

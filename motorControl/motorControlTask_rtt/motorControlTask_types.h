@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'motorControlTask'.
  *
- * Model version                  : 1.186
+ * Model version                  : 1.196
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
  * TLC version                    : 8.9 (Jul 31 2015)
- * C/C++ source code generated on : Mon May 30 18:15:53 2016
+ * C/C++ source code generated on : Sun Jul 24 13:45:50 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex

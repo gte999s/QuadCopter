@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'motorControlTask'.
  *
- * Model version                  : 1.186
+ * Model version                  : 1.196
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
  * TLC version                    : 8.9 (Jul 31 2015)
- * C/C++ source code generated on : Mon May 30 18:15:53 2016
+ * C/C++ source code generated on : Sun Jul 24 13:45:50 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -74,16 +74,22 @@
 
 /* Block signals (auto storage) */
 typedef struct {
-  real32_T Bias[4];                    /* '<Root>/Bias' */
+  real32_T Bias[4];                    /* '<S1>/Bias' */
 } B_motorControlTask_T;
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
-  real_T motorControl_DSTATE;          /* '<Root>/motorControl' */
+  real_T motorControl_DSTATE;          /* '<S1>/motorControl' */
 } DW_motorControlTask_T;
 
 /* Parameters (auto storage) */
 struct P_motorControlTask_T_ {
+  real32_T Gain_Gain;                  /* Computed Parameter: Gain_Gain
+                                        * Referenced by: '<S1>/Gain'
+                                        */
+  real32_T Bias_Bias;                  /* Computed Parameter: Bias_Bias
+                                        * Referenced by: '<S1>/Bias'
+                                        */
   real32_T Constant1_Value;            /* Computed Parameter: Constant1_Value
                                         * Referenced by: '<Root>/Constant1'
                                         */
@@ -95,12 +101,6 @@ struct P_motorControlTask_T_ {
                                         */
   real32_T Constant4_Value;            /* Computed Parameter: Constant4_Value
                                         * Referenced by: '<Root>/Constant4'
-                                        */
-  real32_T Gain_Gain;                  /* Computed Parameter: Gain_Gain
-                                        * Referenced by: '<Root>/Gain'
-                                        */
-  real32_T Bias_Bias;                  /* Computed Parameter: Bias_Bias
-                                        * Referenced by: '<Root>/Bias'
                                         */
 };
 
@@ -179,6 +179,7 @@ extern RT_MODEL_motorControlTask_T *const motorControlTask_M;
  * Here is the system hierarchy for this model
  *
  * '<Root>' : 'motorControlTask'
+ * '<S1>'   : 'motorControlTask/MotorControl'
  */
 #endif                                 /* RTW_HEADER_motorControlTask_h_ */
 

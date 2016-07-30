@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'motorControlTask'.
  *
- * Model version                  : 1.186
+ * Model version                  : 1.196
  * Simulink Coder version         : 8.9 (R2015b) 13-Aug-2015
  * TLC version                    : 8.9 (Jul 31 2015)
- * C/C++ source code generated on : Mon May 30 18:15:53 2016
+ * C/C++ source code generated on : Sun Jul 24 13:45:50 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -35,12 +35,13 @@ RT_MODEL_motorControlTask_T *const motorControlTask_M = &motorControlTask_M_;
 /* Model output function */
 void motorControlTask_output(void)
 {
-  /* Bias: '<Root>/Bias' incorporates:
+  /* Outputs for Atomic SubSystem: '<Root>/MotorControl' */
+  /* Bias: '<S1>/Bias' incorporates:
    *  Constant: '<Root>/Constant1'
    *  Constant: '<Root>/Constant2'
    *  Constant: '<Root>/Constant3'
    *  Constant: '<Root>/Constant4'
-   *  Gain: '<Root>/Gain'
+   *  Gain: '<S1>/Gain'
    */
   motorControlTask_B.Bias[0] = motorControlTask_P.Gain_Gain *
     motorControlTask_P.Constant1_Value + motorControlTask_P.Bias_Bias;
@@ -51,17 +52,23 @@ void motorControlTask_output(void)
   motorControlTask_B.Bias[3] = motorControlTask_P.Gain_Gain *
     motorControlTask_P.Constant4_Value + motorControlTask_P.Bias_Bias;
 
-  /* S-Function (motorControlFCN): '<Root>/motorControl' */
+  /* S-Function (motorControlFCN): '<S1>/motorControl' */
   motorControlFCN_Outputs_wrapper(&motorControlTask_B.Bias[0],
     &motorControlTask_DW.motorControl_DSTATE);
+
+  /* End of Outputs for SubSystem: '<Root>/MotorControl' */
 }
 
 /* Model update function */
 void motorControlTask_update(void)
 {
-  /* S-Function "motorControlFCN_wrapper" Block: <Root>/motorControl */
+  /* Update for Atomic SubSystem: '<Root>/MotorControl' */
+
+  /* S-Function "motorControlFCN_wrapper" Block: <S1>/motorControl */
   motorControlFCN_Update_wrapper(&motorControlTask_B.Bias[0],
     &motorControlTask_DW.motorControl_DSTATE);
+
+  /* End of Update for SubSystem: '<Root>/MotorControl' */
 
   /* signal main to stop simulation */
   {                                    /* Sample time: [0.0s, 0.0s] */
@@ -125,18 +132,19 @@ void motorControlTask_initialize(void)
   motorControlTask_M->Timing.stepSize0 = 0.02;
 
   /* External mode info */
-  motorControlTask_M->Sizes.checksums[0] = (2762435806U);
-  motorControlTask_M->Sizes.checksums[1] = (2367397936U);
-  motorControlTask_M->Sizes.checksums[2] = (419622749U);
-  motorControlTask_M->Sizes.checksums[3] = (566726591U);
+  motorControlTask_M->Sizes.checksums[0] = (4276788412U);
+  motorControlTask_M->Sizes.checksums[1] = (1764471682U);
+  motorControlTask_M->Sizes.checksums[2] = (1375146313U);
+  motorControlTask_M->Sizes.checksums[3] = (3666588002U);
 
   {
     static const sysRanDType rtAlwaysEnabled = SUBSYS_RAN_BC_ENABLE;
     static RTWExtModeInfo rt_ExtModeInfo;
-    static const sysRanDType *systemRan[1];
+    static const sysRanDType *systemRan[2];
     motorControlTask_M->extModeInfo = (&rt_ExtModeInfo);
     rteiSetSubSystemActiveVectorAddresses(&rt_ExtModeInfo, systemRan);
     systemRan[0] = &rtAlwaysEnabled;
+    systemRan[1] = &rtAlwaysEnabled;
     rteiSetModelMappingInfoPtr(motorControlTask_M->extModeInfo,
       &motorControlTask_M->SpecialInfo.mappingInfo);
     rteiSetChecksumsPtr(motorControlTask_M->extModeInfo,
@@ -169,7 +177,9 @@ void motorControlTask_initialize(void)
     dtInfo.P = &rtPTransTable;
   }
 
-  /* S-Function Block: <Root>/motorControl */
+  /* InitializeConditions for Atomic SubSystem: '<Root>/MotorControl' */
+
+  /* S-Function Block: <S1>/motorControl */
   {
     real_T initVector[1] = { 0 };
 
@@ -180,6 +190,8 @@ void motorControlTask_initialize(void)
       }
     }
   }
+
+  /* End of InitializeConditions for SubSystem: '<Root>/MotorControl' */
 }
 
 /* Model terminate function */

@@ -7,9 +7,9 @@
  *
  * Code generation for model "motorControlTask".
  *
- * Model version              : 1.186
+ * Model version              : 1.196
  * Simulink Coder version : 8.9 (R2015b) 13-Aug-2015
- * C source code generated on : Mon May 30 18:15:53 2016
+ * C source code generated on : Sun Jul 24 13:45:50 2016
  *
  * Target selection: realtime.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -71,7 +71,7 @@ static DataTypeTransitionTable rtBTransTable = {
 
 /* data type transitions for Parameters structure */
 static DataTypeTransition rtPTransitions[] = {
-  { (char_T *)(&motorControlTask_P.Constant1_Value), 1, 0, 6 }
+  { (char_T *)(&motorControlTask_P.Gain_Gain), 1, 0, 6 }
 };
 
 /* data type transition table for Parameters structure */

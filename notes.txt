@@ -1,0 +1,11 @@
+%% Motor Control PINs
+Motor 1 - BCM 17
+Motor 2 - BCM 27
+Motor 3 - BCM 22
+Motor 4 - BCM 23
+
+PWM freq = 200Hz
+PWM range = 2500
+
+white clockwise
+red counter clockwise

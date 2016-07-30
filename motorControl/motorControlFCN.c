@@ -25,7 +25,7 @@
   *  -------------------------------------------------------------------------
   * | See matlabroot/simulink/src/sfuntmpl_doc.c for a more detailed template |
   *  ------------------------------------------------------------------------- 
-* Created: Mon May 30 18:01:25 2016
+* Created: Sun Jul 24 13:45:31 2016
 */
 #define S_FUNCTION_LEVEL 2
 #define S_FUNCTION_NAME motorControlFCN
